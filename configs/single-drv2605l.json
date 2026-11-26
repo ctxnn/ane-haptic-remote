@@ -1,0 +1,18 @@
+{
+  "comment": "Single DRV2605L (0x5A) driving three ERM motors in parallel (from capstone-pi-benchmarking cane-hardware.json). Direction is encoded as tap rhythm: Left=1 tap, Middle=2 taps, Right=3 taps.",
+  "topology": "single_drv",
+  "i2c_bus": 1,
+  "mux_address": "0x70",
+  "drv_address": "0x5A",
+  "single_mux_channel": null,
+  "motor_voltage_v": 3.0,
+  "amplitude_floor": 0.30,
+  "taps": {
+    "left": 1,
+    "middle": 2,
+    "right": 3
+  },
+  "default_intensity": 0.80,
+  "default_auto_off_s": 10.0,
+  "max_continuous_on_s": 60.0
+}

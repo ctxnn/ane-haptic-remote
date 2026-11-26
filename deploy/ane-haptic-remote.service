@@ -1,0 +1,19 @@
+[Unit]
+Description=Smart Cane Telegram Haptic Remote Control
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=capstone16
+# The bot reads .env itself, so systemd needs no EnvironmentFile (and a
+# hand-edited .env can never stop the unit from parsing).
+WorkingDirectory=/home/capstone16/ane-haptic-remote
+ExecStart=/home/capstone16/ane-haptic-remote/.venv/bin/ane-remote run
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=5
+KillSignal=SIGTERM
+
+[Install]
+WantedBy=multi-user.target

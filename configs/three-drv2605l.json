@@ -1,0 +1,17 @@
+{
+  "comment": "Three independent DRV2605L haptic drivers behind a TCA9548A I2C multiplexer (0x70) on Raspberry Pi 5 I2C bus 1 (GPIO2 SDA / GPIO3 SCL). Each motor drives its own 3.0 V ERM independently.",
+  "topology": "three_drv",
+  "i2c_bus": 1,
+  "mux_address": "0x70",
+  "drv_address": "0x5A",
+  "motor_voltage_v": 3.0,
+  "amplitude_floor": 0.30,
+  "channels": {
+    "left": 4,
+    "middle": 5,
+    "right": 6
+  },
+  "default_intensity": 0.80,
+  "default_auto_off_s": 10.0,
+  "max_continuous_on_s": 60.0
+}

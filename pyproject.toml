@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ane-haptic-remote"
+version = "0.1.0"
+description = "Telegram remote control for Raspberry Pi 5 Smart Cane DRV2605L haptics (Left / Middle / Right)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Chirag Taneja"}]
+dependencies = []
+
+[project.optional-dependencies]
+pi = [
+  "smbus2>=0.4.3",
+]
+dev = [
+  "pytest>=8.0",
+]
+
+[project.scripts]
+ane-remote = "ane_haptic_remote.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E9", "F", "I"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+pythonpath = ["src"]
